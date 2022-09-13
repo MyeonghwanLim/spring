@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="phone" class="test.Galaxy" init-method="initMethod" destroy-method="destroyMethod"/>
+	<bean id="iphone" class="test.IPhone">
+		<constructor-arg ref="aw" />
+		<constructor-arg value="9890" />
+	</bean>
+	<bean id="aw" class="test.AppleWatch"></bean>
+		<!-- 스코프 싱글톤이 디폴트로 설정 되어있다. -->
+		<!-- 싱글톤 패턴을사용하지않고 새로운 객체생성을 원한다면 prototype으로 설정 -->
+		<!-- 늦게 초기화되기를 원한다면 bean의 속석중 lazy-init 속성을 =true 사용 -->
+</beans>
